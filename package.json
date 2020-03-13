@@ -5,6 +5,9 @@
   "main": "lib/commonjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/types/index.d.ts",
+  "files": [
+    "lib"
+  ],
   "scripts": {
     "build": "npm run build-cjs && npm run build-esm",
     "build-esm": "npx tsc -m es6 --outDir lib/esm",
@@ -13,6 +16,10 @@
   },
   "sideEffects": false,
   "author": "Johan Stén <johan@futuretense.io>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/future-tense/stellar-box.git"
+  },
   "license": "MIT",
   "dependencies": {
     "@futuretense/ed25519-box": "^1.0.0",
