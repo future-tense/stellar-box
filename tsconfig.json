@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "removeComments": true,
+    "strictNullChecks": true,
+    "declaration": true,
+    "declarationDir": "lib/types",
+    "moduleResolution": "Node",
+    "sourceMap": false,
+    "target": "es6",
+    "lib": [
+      "es6",
+      "dom"
+    ]
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

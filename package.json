@@ -1,0 +1,29 @@
+{
+  "name": "@futuretense/stellar-box",
+  "version": "1.0.0",
+  "description": "Simple public-key encryption using your Stellar keys",
+  "main": "lib/commonjs/index.js",
+  "module": "lib/esm/index.js",
+  "types": "lib/types/index.d.ts",
+  "scripts": {
+    "build": "npm run build-cjs && npm run build-esm",
+    "build-esm": "npx tsc -m es6 --outDir lib/esm",
+    "build-cjs": "npx tsc -m commonjs --outDir lib/commonjs",
+    "test": "npx ava-ts"
+  },
+  "sideEffects": false,
+  "author": "Johan Stén <johan@futuretense.io>",
+  "license": "MIT",
+  "dependencies": {
+    "@futuretense/ed25519-box": "^1.0.0",
+    "stellar-sdk": "^4.0.2"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.30",
+    "ava": "^3.5.0",
+    "ava-ts": "^0.25.2",
+    "secure-random": "^1.1.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.8.3"
+  }
+}
