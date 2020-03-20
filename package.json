@@ -26,7 +26,7 @@
     "stellar-sdk": "^4.0.2"
   },
   "devDependencies": {
-    "@types/node": "^12.12.30",
+    "@types/node": "^13.9.1",
     "ava": "^3.5.0",
     "ava-ts": "^0.25.2",
     "secure-random": "^1.1.2",
