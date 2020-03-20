@@ -27,7 +27,7 @@ async encrypt(keys, to, input, nonce, authenticate = true);
 ```
 
 |Parameter|Type|Description|
-|---|---|---|
+|:--|:--|:--|
 |keys|Keypair|The keypair of the sender|
 | to |string|The public key of the recipient|
 | input |Uint8Array|The data to be encrypted|
@@ -35,7 +35,7 @@ async encrypt(keys, to, input, nonce, authenticate = true);
 | authenticate |Boolean|Should it be authenticated?|
 
 |Return value|
-|------------|
+|:--|
 |Promise\<Uint8Array\>|
 
 ### Decrypt
@@ -45,7 +45,7 @@ async decrypt(keys, from, input, nonce, authenticate = true);
 ```
 
 |Parameter|Type|Description|
-|---|---|---|
+|:--|:--|:--|
 |keys|Keypair| The keypair of the recipient|
 | from |string| The public key of the sender |
 | input |Uint8Array| The encrypted data|
@@ -53,7 +53,7 @@ async decrypt(keys, from, input, nonce, authenticate = true);
 | authenticate |Boolean|Shoult be authenticated?|
 
 |Return value|
-|------------|
+|:--|
 |Promise\<Uint8Array\>|
 
 ## Authentication
