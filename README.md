@@ -50,7 +50,7 @@ async decrypt(keys, from, input, nonce, authenticate = true);
 | from |string| The public key of the sender |
 | input |Uint8Array| The encrypted data|
 | nonce |Uint8Array|The message nonce|
-| authenticate |Boolean|Shoult be authenticated?|
+| authenticate |Boolean|Should it be authenticated?|
 
 |Return value|
 |:--|
