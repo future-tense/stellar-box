@@ -14,6 +14,8 @@
     "build:esm": "npx tsc -p tsconfig.json -m es6 --outDir lib/esm",
     "build:cjs": "npx tsc -p tsconfig.json -m commonjs --outDir lib/commonjs",
     "build:types": "npx tsc -p config/tsconfig.types.json",
+    "build:docs": "npx typedoc --options config/typedoc.json --tsconfig tsconfig.json",
+    "publish:docs": "npx gh-pages -m 'Updates' -d docs",
     "test": "npx ava-ts"
   },
   "sideEffects": false,
@@ -25,7 +27,9 @@
   "license": "MIT",
   "dependencies": {
     "@futuretense/ed25519-box": "^1.0.1",
+    "gh-pages": "^2.2.0",
     "stellar-sdk": "^4.1.0",
+    "typedoc": "^0.17.4"
   },
   "devDependencies": {
     "@types/node": "^13.13.0",
