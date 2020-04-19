@@ -1,7 +1,7 @@
 {
   "name": "@futuretense/stellar-box",
-  "version": "1.0.0",
-  "description": "Simple public-key encryption using your Stellar keys",
+  "version": "1.0.1",
+  "description": "Simple public-key encryption using Stellar keys",
   "main": "lib/commonjs/index.js",
   "module": "lib/esm/index.js",
   "types": "lib/index.d.ts",
