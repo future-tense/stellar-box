@@ -4,14 +4,16 @@
   "description": "Simple public-key encryption using your Stellar keys",
   "main": "lib/commonjs/index.js",
   "module": "lib/esm/index.js",
-  "types": "lib/types/index.d.ts",
+  "types": "lib/index.d.ts",
   "files": [
     "lib"
   ],
   "scripts": {
-    "build": "npm run build-cjs && npm run build-esm",
-    "build-esm": "npx tsc -m es6 --outDir lib/esm",
-    "build-cjs": "npx tsc -m commonjs --outDir lib/commonjs",
+    "clean": "rm -rf lib && rm -rf temp",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:types",
+    "build:esm": "npx tsc -p tsconfig.json -m es6 --outDir lib/esm",
+    "build:cjs": "npx tsc -p tsconfig.json -m commonjs --outDir lib/commonjs",
+    "build:types": "npx tsc -p config/tsconfig.types.json",
     "test": "npx ava-ts"
   },
   "sideEffects": false,

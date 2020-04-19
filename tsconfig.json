@@ -1,15 +1,27 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
+    "module": "commonjs",
     "removeComments": true,
+    "stripInternal": true,
+
+    //    "noImplicitAny": true,
     "strictNullChecks": true,
-    "declaration": true,
-    "declarationDir": "lib/types",
-    "moduleResolution": "Node",
+    "strictFunctionTypes": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+
+    "declaration": false,
     "sourceMap": false,
-    "target": "es6",
+    "target": "es2017",
+    "outDir": "lib",
+    "moduleResolution": "Node",
     "lib": [
-      "es6",
-      "dom"
+      "es6"
     ]
   },
   "include": [
