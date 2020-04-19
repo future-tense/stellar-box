@@ -1,0 +1,238 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>stellar-box</title>
+	<meta name="description" content="Documentation for stellar-box">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">stellar-box</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>stellar-box</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#futuretensestellar-box" id="futuretensestellar-box" style="color: inherit; text-decoration: none;">
+					<h1>@futuretense/stellar-box</h1>
+				</a>
+				<p>Simple public-key encryption using your Stellar keys</p>
+				<p>Draws inspiration from <code>box</code> of NaCl, but works with Stellar keys right away.</p>
+				<a href="#stellar-box-vs-nacl-box" id="stellar-box-vs-nacl-box" style="color: inherit; text-decoration: none;">
+					<h3>stellar-box vs nacl-box</h3>
+				</a>
+				<ul>
+					<li>stellar-box uses ed25519 key-pairs directly, whereas w/ nacl-box you have to transform ed25519 keys to curve25519 keys.</li>
+					<li>stellar-box gives you the choice of not using authentication, whereas nacl-box always adds a Poly1305 authentication tag.</li>
+					<li>stellar-box uses standard crypto APIs, already included in node.js, or in your browser -- no extra dependencies</li>
+				</ul>
+				<a href="#installation" id="installation" style="color: inherit; text-decoration: none;">
+					<h2>Installation</h2>
+				</a>
+				<pre><code><span class="hljs-built_in">npm</span> install @futuretense/stellar-box</code></pre>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<pre><code><span class="hljs-keyword">import</span> { encrypt, decrypt } <span class="hljs-keyword">from</span> <span class="hljs-string">'@futuretense/stellar-box'</span>;</code></pre>
+				<a href="#functions" id="functions" style="color: inherit; text-decoration: none;">
+					<h2>Functions</h2>
+				</a>
+				<a href="#encrypt" id="encrypt" style="color: inherit; text-decoration: none;">
+					<h3>Encrypt</h3>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-keyword">async</span> encrypt(keys, to, input, nonce, authenticate = <span class="hljs-literal">true</span>);</code></pre>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Parameter</th>
+							<th align="left">Type</th>
+							<th align="left">Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left">keys</td>
+							<td align="left">Keypair</td>
+							<td align="left">The keypair of the sender</td>
+						</tr>
+						<tr>
+							<td align="left">to</td>
+							<td align="left">string</td>
+							<td align="left">The public key of the recipient</td>
+						</tr>
+						<tr>
+							<td align="left">input</td>
+							<td align="left">Uint8Array</td>
+							<td align="left">The data to be encrypted</td>
+						</tr>
+						<tr>
+							<td align="left">nonce</td>
+							<td align="left">Uint8Array</td>
+							<td align="left">The message nonce</td>
+						</tr>
+						<tr>
+							<td align="left">authenticate</td>
+							<td align="left">Boolean</td>
+							<td align="left">Should it be authenticated?</td>
+						</tr>
+				</tbody></table>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Return value</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left">Promise&lt;Uint8Array&gt;</td>
+						</tr>
+				</tbody></table>
+				<a href="#decrypt" id="decrypt" style="color: inherit; text-decoration: none;">
+					<h3>Decrypt</h3>
+				</a>
+				<pre><code class="language-javascript"><span class="hljs-keyword">async</span> decrypt(keys, <span class="hljs-keyword">from</span>, input, nonce, authenticate = <span class="hljs-literal">true</span>);</code></pre>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Parameter</th>
+							<th align="left">Type</th>
+							<th align="left">Description</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left">keys</td>
+							<td align="left">Keypair</td>
+							<td align="left">The keypair of the recipient</td>
+						</tr>
+						<tr>
+							<td align="left">from</td>
+							<td align="left">string</td>
+							<td align="left">The public key of the sender</td>
+						</tr>
+						<tr>
+							<td align="left">input</td>
+							<td align="left">Uint8Array</td>
+							<td align="left">The encrypted data</td>
+						</tr>
+						<tr>
+							<td align="left">nonce</td>
+							<td align="left">Uint8Array</td>
+							<td align="left">The message nonce</td>
+						</tr>
+						<tr>
+							<td align="left">authenticate</td>
+							<td align="left">Boolean</td>
+							<td align="left">Should it be authenticated?</td>
+						</tr>
+				</tbody></table>
+				<table>
+					<thead>
+						<tr>
+							<th align="left">Return value</th>
+						</tr>
+					</thead>
+					<tbody><tr>
+							<td align="left">Promise&lt;Uint8Array&gt;</td>
+						</tr>
+				</tbody></table>
+				<a href="#authentication" id="authentication" style="color: inherit; text-decoration: none;">
+					<h2>Authentication</h2>
+				</a>
+				<p><em>Authenticated mode</em> (which is the default) uses AES-256-GCM to add integrity control to the pot, to make it possible to verify that the provided cipher output has been encrypted by someone with access to the encryption key.</p>
+				<p>Authentication adds sixteen bytes of data to the output.</p>
+				<p><em>Un-authenticated mode</em> uses AES in counter mode (AES-256-CTR), and doesn&#39;t add any extra data.</p>
+				<a href="#nonce" id="nonce" style="color: inherit; text-decoration: none;">
+					<h2>Nonce</h2>
+				</a>
+				<p>Authenticated mode has a twelve byte nonce, and un-authenticated mode has a sixteen byte nonce.</p>
+				<p>In both modes, the nonces provided are used as initial values for the counters.</p>
+				<a href="#nonce-re-use" id="nonce-re-use" style="color: inherit; text-decoration: none;">
+					<h4>Nonce re-use</h4>
+				</a>
+				<blockquote>
+					<p>The idea is that, for a given key, you should consider each counter value as &quot;burnt&quot; whenever you use it. -- Thomas Pornin</p>
+				</blockquote>
+				<p>Both modes use stream ciphers that divide the input data into 128-bit blocks, which are then <em>exclusive-or:ed</em>
+				with the result of a function based on the encryption key and the counter value for a block.</p>
+				<p>If a <em>(key, counter)</em>-combination is ever used twice, this can be exploited to arrive at a block that&#39;s the <em>exclusive-or</em> of the two unencrypted input blocks.</p>
+				<p>Copyright &copy; 2020 Future Tense, LLC</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-function">
+						<a href="globals.html#decrypt" class="tsd-kind-icon">decrypt</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#encrypt" class="tsd-kind-icon">encrypt</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
