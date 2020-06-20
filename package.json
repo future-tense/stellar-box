@@ -28,7 +28,7 @@
   "dependencies": {
     "@futuretense/ed25519-box": "^1.0.1",
     "gh-pages": "^2.2.0",
-    "stellar-sdk": "^4.1.0",
+    "stellar-sdk": "^5.0.0",
     "typedoc": "^0.17.4"
   },
   "devDependencies": {
